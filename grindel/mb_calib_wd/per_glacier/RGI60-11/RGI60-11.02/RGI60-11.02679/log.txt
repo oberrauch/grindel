@@ -1,0 +1,12 @@
+2019-04-09T14:23:33;define_glacier_region;SUCCESS
+2019-04-09T14:23:49;process_histalp_data;SUCCESS
+2019-04-09T14:24:02;glacier_masks;SUCCESS
+2019-04-09T14:24:10;compute_centerlines;SUCCESS
+2019-04-09T14:24:16;initialize_flowlines;SUCCESS
+2019-04-09T14:25:09;catchment_area;SUCCESS
+2019-04-09T14:25:24;catchment_intersections;SUCCESS
+2019-04-09T14:25:54;catchment_width_geom;SUCCESS
+2019-04-09T14:26:04;catchment_width_correction;SUCCESS
+2019-04-09T14:26:08;t_star_from_refmb;SUCCESS
+2019-04-09T14:26:12;local_t_star;SUCCESS
+2019-04-09T14:26:20;mu_star_calibration;SUCCESS

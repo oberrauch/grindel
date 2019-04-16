@@ -1,0 +1,12 @@
+Federal Office of Meteorology and Climatology, MeteoSwiss
+Operation Center 1
+Postfach 257
+8058 Zürich-Flughafen
+
+Order number 61939
+
+Filename                                Filetype  Station                              Parameter                                                   Period
+order_61939_JUN_tre200m0_1_data.txt     Data      Jungfraujoch                         Air temperature 2 m above ground; monthly mean              193212-201808
+order_61939_JUN_tre200m0_1_legend.txt   Legend    Jungfraujoch                         Air temperature 2 m above ground; monthly mean              193212-201808
+order_61939_JUN_tre200d0_1_data.txt     Data      Jungfraujoch                         Air temperature 2 m above ground; daily mean                19321231-20180909
+order_61939_JUN_tre200d0_1_legend.txt   Legend    Jungfraujoch                         Air temperature 2 m above ground; daily mean                19321231-20180909

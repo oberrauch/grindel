@@ -1,0 +1,54 @@
+Bundesamt für Meteorologie und Klimatologie, MeteoSchweiz
+Operation Center 1
+Postfach 257
+8058 Zürich-Flughafen
+
+Bestellnummer 61373
+
+Dateiname                               Dateityp  Station                              Parameter                                                   Zeitinterval
+order_61373_SLFGAD_rre150d0_1_data.txt  Daten     Gadmen / Gschletteregg               Niederschlag; Tagessumme 6 UTC - 6 UTC Folgetag             20000815-20161218
+order_61373_SLFGAD_rre150d0_1_legend.txt Legende   Gadmen / Gschletteregg               Niederschlag; Tagessumme 6 UTC - 6 UTC Folgetag             20000815-20161218
+order_61373_SLFGAD_rre150d0_2_data.txt  Daten     Gadmen / Gschletteregg               Niederschlag; Tagessumme 6 UTC - 6 UTC Folgetag             20170221-20180818
+order_61373_SLFGAD_rre150d0_2_legend.txt Legende   Gadmen / Gschletteregg               Niederschlag; Tagessumme 6 UTC - 6 UTC Folgetag             20170221-20180818
+order_61373_SLFGO3_rre150d0_1_data.txt  Daten     Goms / Treichbode                    Niederschlag; Tagessumme 6 UTC - 6 UTC Folgetag             20040824-20161106
+order_61373_SLFGO3_rre150d0_1_legend.txt Legende   Goms / Treichbode                    Niederschlag; Tagessumme 6 UTC - 6 UTC Folgetag             20040824-20161106
+order_61373_SLFGO3_rre150d0_2_data.txt  Daten     Goms / Treichbode                    Niederschlag; Tagessumme 6 UTC - 6 UTC Folgetag             20170212-20180818
+order_61373_SLFGO3_rre150d0_2_legend.txt Legende   Goms / Treichbode                    Niederschlag; Tagessumme 6 UTC - 6 UTC Folgetag             20170212-20180818
+order_61373_SLFFIR_rre150d0_1_data.txt  Daten     Grindelwald / First                  Niederschlag; Tagessumme 6 UTC - 6 UTC Folgetag             20000919-20161106
+order_61373_SLFFIR_rre150d0_1_legend.txt Legende   Grindelwald / First                  Niederschlag; Tagessumme 6 UTC - 6 UTC Folgetag             20000919-20161106
+order_61373_SLFFIR_rre150d0_2_data.txt  Daten     Grindelwald / First                  Niederschlag; Tagessumme 6 UTC - 6 UTC Folgetag             20170208-20180817
+order_61373_SLFFIR_rre150d0_2_legend.txt Legende   Grindelwald / First                  Niederschlag; Tagessumme 6 UTC - 6 UTC Folgetag             20170208-20180817
+order_61373_SLFGU2_rre150d0_1_data.txt  Daten     Guttannen / Homad                    Niederschlag; Tagessumme 6 UTC - 6 UTC Folgetag             20000815-20161106
+order_61373_SLFGU2_rre150d0_1_legend.txt Legende   Guttannen / Homad                    Niederschlag; Tagessumme 6 UTC - 6 UTC Folgetag             20000815-20161106
+order_61373_SLFGU2_rre150d0_2_data.txt  Daten     Guttannen / Homad                    Niederschlag; Tagessumme 6 UTC - 6 UTC Folgetag             20170219-20180818
+order_61373_SLFGU2_rre150d0_2_legend.txt Legende   Guttannen / Homad                    Niederschlag; Tagessumme 6 UTC - 6 UTC Folgetag             20170219-20180818
+order_61373_KSE_rre150d0_1_data.txt     Daten     Kleine Scheidegg                     Niederschlag; Tagessumme 6 UTC - 6 UTC Folgetag             19601231-20180730
+order_61373_KSE_rre150d0_1_legend.txt   Legende   Kleine Scheidegg                     Niederschlag; Tagessumme 6 UTC - 6 UTC Folgetag             19601231-20180730
+order_61373_BEKSE_rre150d0_1_data.txt   Daten     Kleine Scheidegg                     Niederschlag; Tagessumme 6 UTC - 6 UTC Folgetag             20080831-20180818
+order_61373_BEKSE_rre150d0_1_legend.txt Legende   Kleine Scheidegg                     Niederschlag; Tagessumme 6 UTC - 6 UTC Folgetag             20080831-20180818
+order_61373_SLFMAE_rre150d0_1_data.txt  Daten     Männlichen                           Niederschlag; Tagessumme 6 UTC - 6 UTC Folgetag             20120704-20161106
+order_61373_SLFMAE_rre150d0_1_legend.txt Legende   Männlichen                           Niederschlag; Tagessumme 6 UTC - 6 UTC Folgetag             20120704-20161106
+order_61373_SLFMAE_rre150d0_2_data.txt  Daten     Männlichen                           Niederschlag; Tagessumme 6 UTC - 6 UTC Folgetag             20170208-20180818
+order_61373_SLFMAE_rre150d0_2_legend.txt Legende   Männlichen                           Niederschlag; Tagessumme 6 UTC - 6 UTC Folgetag             20170208-20180818
+order_61373_URRET_rre150d0_1_data.txt   Daten     Realp / Tiefenbach                   Niederschlag; Tagessumme 6 UTC - 6 UTC Folgetag             20180228-20180818
+order_61373_URRET_rre150d0_1_legend.txt Legende   Realp / Tiefenbach                   Niederschlag; Tagessumme 6 UTC - 6 UTC Folgetag             20180228-20180818
+order_61373_SLFSH2_rre150d0_1_data.txt  Daten     Schilthorn / Türliboden              Niederschlag; Tagessumme 6 UTC - 6 UTC Folgetag             20000609-20161106
+order_61373_SLFSH2_rre150d0_1_legend.txt Legende   Schilthorn / Türliboden              Niederschlag; Tagessumme 6 UTC - 6 UTC Folgetag             20000609-20161106
+order_61373_SLFSH2_rre150d0_2_data.txt  Daten     Schilthorn / Türliboden              Niederschlag; Tagessumme 6 UTC - 6 UTC Folgetag             20170208-20180818
+order_61373_SLFSH2_rre150d0_2_legend.txt Legende   Schilthorn / Türliboden              Niederschlag; Tagessumme 6 UTC - 6 UTC Folgetag             20170208-20180818
+order_61373_TIT_rre150d0_1_data.txt     Daten     Titlis                               Niederschlag; Tagessumme 6 UTC - 6 UTC Folgetag             20131014-20131220
+order_61373_TIT_rre150d0_1_legend.txt   Legende   Titlis                               Niederschlag; Tagessumme 6 UTC - 6 UTC Folgetag             20131014-20131220
+order_61373_TIT_rre150d0_2_data.txt     Daten     Titlis                               Niederschlag; Tagessumme 6 UTC - 6 UTC Folgetag             20140225-20160106
+order_61373_TIT_rre150d0_2_legend.txt   Legende   Titlis                               Niederschlag; Tagessumme 6 UTC - 6 UTC Folgetag             20140225-20160106
+order_61373_TIT_rre150d0_3_data.txt     Daten     Titlis                               Niederschlag; Tagessumme 6 UTC - 6 UTC Folgetag             20160412-20160708
+order_61373_TIT_rre150d0_3_legend.txt   Legende   Titlis                               Niederschlag; Tagessumme 6 UTC - 6 UTC Folgetag             20160412-20160708
+order_61373_SLFTIT_rre150d0_1_data.txt  Daten     Titlis                               Niederschlag; Tagessumme 6 UTC - 6 UTC Folgetag             20110915-20161106
+order_61373_SLFTIT_rre150d0_1_legend.txt Legende   Titlis                               Niederschlag; Tagessumme 6 UTC - 6 UTC Folgetag             20110915-20161106
+order_61373_SLFTIT_rre150d0_2_data.txt  Daten     Titlis                               Niederschlag; Tagessumme 6 UTC - 6 UTC Folgetag             20170207-20180818
+order_61373_SLFTIT_rre150d0_2_legend.txt Legende   Titlis                               Niederschlag; Tagessumme 6 UTC - 6 UTC Folgetag             20170207-20180818
+order_61373_SLFUR2_rre150d0_1_data.txt  Daten     Urseren / Giltnasen                  Niederschlag; Tagessumme 6 UTC - 6 UTC Folgetag             19980930-20161112
+order_61373_SLFUR2_rre150d0_1_legend.txt Legende   Urseren / Giltnasen                  Niederschlag; Tagessumme 6 UTC - 6 UTC Folgetag             19980930-20161112
+order_61373_SLFUR2_rre150d0_2_data.txt  Daten     Urseren / Giltnasen                  Niederschlag; Tagessumme 6 UTC - 6 UTC Folgetag             20170206-20170409
+order_61373_SLFUR2_rre150d0_2_legend.txt Legende   Urseren / Giltnasen                  Niederschlag; Tagessumme 6 UTC - 6 UTC Folgetag             20170206-20170409
+order_61373_SLFUR2_rre150d0_3_data.txt  Daten     Urseren / Giltnasen                  Niederschlag; Tagessumme 6 UTC - 6 UTC Folgetag             20170808-20180818
+order_61373_SLFUR2_rre150d0_3_legend.txt Legende   Urseren / Giltnasen                  Niederschlag; Tagessumme 6 UTC - 6 UTC Folgetag             20170808-20180818

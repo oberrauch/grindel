@@ -1,0 +1,16 @@
+2018-08-02T14:57:30;define_glacier_region;SUCCESS
+2018-08-02T14:57:50;process_cru_data;SUCCESS
+2018-08-02T14:58:52;glacier_masks;SUCCESS
+2018-08-02T14:58:57;compute_centerlines;SUCCESS
+2018-08-02T14:59:02;initialize_flowlines;SUCCESS
+2018-08-02T14:59:33;catchment_area;SUCCESS
+2018-08-02T14:59:49;catchment_intersections;SUCCESS
+2018-08-02T15:00:03;catchment_width_geom;SUCCESS
+2018-08-02T15:00:12;catchment_width_correction;SUCCESS
+2018-08-02T15:00:33;process_custom_climate_data;SUCCESS
+2018-08-02T15:00:57;mu_candidates;SUCCESS
+2018-08-02T15:01:05;local_mustar;SUCCESS
+2018-08-02T15:01:10;apparent_mb;SUCCESS
+2018-08-02T15:01:24;mu_candidates;SUCCESS
+2018-08-02T15:01:33;local_mustar;SUCCESS
+2018-08-02T15:01:37;apparent_mb;SUCCESS

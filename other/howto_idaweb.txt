@@ -1,0 +1,34 @@
+IDAWEB:
+---------------
+
+This note contains some information about the IDAWEB and what I did with the data...
+
+1) LogIn:
+	First step is the online regristration. The following confirmation email contains a link to the User Application Form, which must be filled out, signed, and send back by mail! Turns out an email with the scanned form to idaweb@meteoswiss.ch is sufficient... Took one buiseness day to get through...
+	Username: moritz.oberrauch@uibk.ac.at
+	Password: -
+
+2) Getting data:
+	There are two ways to select data, either via station(s) or via parameter(s). It is best to use the service in its German version, since the database seems to have some problems with keywords from dropdown menus in other languages...
+	There is not much more to say, except that it is not as intuitive as it could be. The documentation under the Help tab is worth reading and safes you from numerouse trial-and-error data orders.
+
+	- Multiple parameters or not...
+
+	- Single or not
+
+	- Precipiation data
+
+3) My module:
+
+
+Actual work:
+--------------------
+1) writing my 'idaweb.py' module
+2) read, process and save precip data from the station Eigergletscher and Kleine Scheidegg in 'prepare_idaweb_precip_data.ipynb' -> raw_data/monthly_precip_eiger_scheidegg.csv
+3) compare to HistAlp in 'climate_comparison.ipynb'
+4) read, process and save precip data from SLF station in vicinity in 'get_idaweb_data.ipynb' -> raw_data/monthly_precip_slf_stations.csv
+
+
+Side work:
+--------------------
+@TODO: create map with stations...

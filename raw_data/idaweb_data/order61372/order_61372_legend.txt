@@ -1,0 +1,50 @@
+Bundesamt für Meteorologie und Klimatologie, MeteoSchweiz
+Operation Center 1
+Postfach 257
+8058 Zürich-Flughafen
+
+stn yyyyMMddHHmm
+
+stn Stationskürzel
+y   Jahr
+M   Monat
+d   Tag
+H   Stunde
+m   Minute
+
+Zeitangaben in UTC: 00:40 UTC = 02:40 Sommerzeit
+                              = 01:40 Winterzeit
+
+Zeitbezug bei Stundenwerten, sofern in der Parameterbeschreibung nicht anders vermerkt: HH  = (HH-1):41 - HH:40
+Beispiel: 13 = beinhaltet Messperiode von 12:41 bis 13:40 
+
+Fehlende Messwerte sind gekenntzeichnet mit '-'
+
+Qualitätsinformationen: Die Legende zu den Qualitätsinformationen ist zu finden unter: https://gate.meteoswiss.ch/idaweb/text/datenqualitaet_legende_de.pdf
+
+ 
+
+
+
+
+Stationen
+---------
+stn       Name                                 Parameter        Datenquelle                                        Länge/Breite             Koordinaten [km] Höhe ü. M. [m]
+SLFGAD    Gadmen / Gschletteregg               rre150d0         Eidg. Institut für Schnee- und Lawinenforschung    8°24'/46°45'             673270/177465    2060
+SLFGO3    Goms / Treichbode                    rre150d0         Eidg. Institut für Schnee- und Lawinenforschung    8°14'/46°29'             660650/148950    2430
+SLFFIR    Grindelwald / First                  rre150d0         Eidg. Institut für Schnee- und Lawinenforschung    8°04'/46°40'             647900/168780    2110
+SLFGU2    Guttannen / Homad                    rre150d0         Eidg. Institut für Schnee- und Lawinenforschung    8°17'/46°41'             665100/170100    2110
+KSE       Kleine Scheidegg                     rre150d0         MeteoSchweiz                                       7°58'/46°35'             639896/159346    2060
+BEKSE     Kleine Scheidegg                     rre150d0         Kanton Bern                                        7°58'/46°35'             639896/159346    2060
+SLFMAE    Männlichen                           rre150d0         Eidg. Institut für Schnee- und Lawinenforschung    7°57'/46°37'             638650/163175    2165
+URRET     Realp / Tiefenbach                   rre150d0         Kanton Uri                                         8°28'/46°36'             678390/160750    2119
+SLFSH2    Schilthorn / Türliboden              rre150d0         Eidg. Institut für Schnee- und Lawinenforschung    7°50'/46°35'             630380/158450    2360
+TIT       Titlis                               rre150d0         MeteoSchweiz                                       8°26'/46°46'             675400/180400    3040
+SLFTIT    Titlis                               rre150d0         Eidg. Institut für Schnee- und Lawinenforschung    8°25'/46°47'             674075/182080    2140
+SLFUR2    Urseren / Giltnasen                  rre150d0         Eidg. Institut für Schnee- und Lawinenforschung    8°31'/46°35'             682400/160100    2170
+
+Parameter
+---------
+          Einheit                              Beschreibung
+rre150d0  mm                                   Niederschlag; Tagessumme 6 UTC - 6 UTC Folgetag
+

@@ -1,0 +1,54 @@
+Federal Office of Meteorology and Climatology, MeteoSwiss
+Operation Center 1
+Postfach 257
+8058 Zürich-Flughafen
+
+Order number 61482
+
+Filename                                Filetype  Station                              Parameter                                                   Period
+order_61482_SLFGAD_rre150d0_1_data.txt  Data      Gadmen / Gschletteregg               Precipitation; daily total 6 UTC - 6 UTC following day      20000815-20161218
+order_61482_SLFGAD_rre150d0_1_legend.txt Legend    Gadmen / Gschletteregg               Precipitation; daily total 6 UTC - 6 UTC following day      20000815-20161218
+order_61482_SLFGAD_rre150d0_2_data.txt  Data      Gadmen / Gschletteregg               Precipitation; daily total 6 UTC - 6 UTC following day      20170221-20180825
+order_61482_SLFGAD_rre150d0_2_legend.txt Legend    Gadmen / Gschletteregg               Precipitation; daily total 6 UTC - 6 UTC following day      20170221-20180825
+order_61482_SLFGO3_rre150d0_1_data.txt  Data      Goms / Treichbode                    Precipitation; daily total 6 UTC - 6 UTC following day      20040824-20161106
+order_61482_SLFGO3_rre150d0_1_legend.txt Legend    Goms / Treichbode                    Precipitation; daily total 6 UTC - 6 UTC following day      20040824-20161106
+order_61482_SLFGO3_rre150d0_2_data.txt  Data      Goms / Treichbode                    Precipitation; daily total 6 UTC - 6 UTC following day      20170212-20180824
+order_61482_SLFGO3_rre150d0_2_legend.txt Legend    Goms / Treichbode                    Precipitation; daily total 6 UTC - 6 UTC following day      20170212-20180824
+order_61482_SLFFIR_rre150d0_1_data.txt  Data      Grindelwald / First                  Precipitation; daily total 6 UTC - 6 UTC following day      20000919-20161106
+order_61482_SLFFIR_rre150d0_1_legend.txt Legend    Grindelwald / First                  Precipitation; daily total 6 UTC - 6 UTC following day      20000919-20161106
+order_61482_SLFFIR_rre150d0_2_data.txt  Data      Grindelwald / First                  Precipitation; daily total 6 UTC - 6 UTC following day      20170208-20180825
+order_61482_SLFFIR_rre150d0_2_legend.txt Legend    Grindelwald / First                  Precipitation; daily total 6 UTC - 6 UTC following day      20170208-20180825
+order_61482_SLFGU2_rre150d0_1_data.txt  Data      Guttannen / Homad                    Precipitation; daily total 6 UTC - 6 UTC following day      20000815-20161106
+order_61482_SLFGU2_rre150d0_1_legend.txt Legend    Guttannen / Homad                    Precipitation; daily total 6 UTC - 6 UTC following day      20000815-20161106
+order_61482_SLFGU2_rre150d0_2_data.txt  Data      Guttannen / Homad                    Precipitation; daily total 6 UTC - 6 UTC following day      20170219-20180825
+order_61482_SLFGU2_rre150d0_2_legend.txt Legend    Guttannen / Homad                    Precipitation; daily total 6 UTC - 6 UTC following day      20170219-20180825
+order_61482_KSE_rre150d0_1_data.txt     Data      Kleine Scheidegg                     Precipitation; daily total 6 UTC - 6 UTC following day      19601231-20180730
+order_61482_KSE_rre150d0_1_legend.txt   Legend    Kleine Scheidegg                     Precipitation; daily total 6 UTC - 6 UTC following day      19601231-20180730
+order_61482_BEKSE_rre150d0_1_data.txt   Data      Kleine Scheidegg                     Precipitation; daily total 6 UTC - 6 UTC following day      20080831-20180825
+order_61482_BEKSE_rre150d0_1_legend.txt Legend    Kleine Scheidegg                     Precipitation; daily total 6 UTC - 6 UTC following day      20080831-20180825
+order_61482_SLFMAE_rre150d0_1_data.txt  Data      Männlichen                           Precipitation; daily total 6 UTC - 6 UTC following day      20120704-20161106
+order_61482_SLFMAE_rre150d0_1_legend.txt Legend    Männlichen                           Precipitation; daily total 6 UTC - 6 UTC following day      20120704-20161106
+order_61482_SLFMAE_rre150d0_2_data.txt  Data      Männlichen                           Precipitation; daily total 6 UTC - 6 UTC following day      20170208-20180825
+order_61482_SLFMAE_rre150d0_2_legend.txt Legend    Männlichen                           Precipitation; daily total 6 UTC - 6 UTC following day      20170208-20180825
+order_61482_URRET_rre150d0_1_data.txt   Data      Realp / Tiefenbach                   Precipitation; daily total 6 UTC - 6 UTC following day      20180228-20180825
+order_61482_URRET_rre150d0_1_legend.txt Legend    Realp / Tiefenbach                   Precipitation; daily total 6 UTC - 6 UTC following day      20180228-20180825
+order_61482_SLFSH2_rre150d0_1_data.txt  Data      Schilthorn / Türliboden              Precipitation; daily total 6 UTC - 6 UTC following day      20000609-20161106
+order_61482_SLFSH2_rre150d0_1_legend.txt Legend    Schilthorn / Türliboden              Precipitation; daily total 6 UTC - 6 UTC following day      20000609-20161106
+order_61482_SLFSH2_rre150d0_2_data.txt  Data      Schilthorn / Türliboden              Precipitation; daily total 6 UTC - 6 UTC following day      20170208-20180824
+order_61482_SLFSH2_rre150d0_2_legend.txt Legend    Schilthorn / Türliboden              Precipitation; daily total 6 UTC - 6 UTC following day      20170208-20180824
+order_61482_TIT_rre150d0_1_data.txt     Data      Titlis                               Precipitation; daily total 6 UTC - 6 UTC following day      20131014-20131220
+order_61482_TIT_rre150d0_1_legend.txt   Legend    Titlis                               Precipitation; daily total 6 UTC - 6 UTC following day      20131014-20131220
+order_61482_TIT_rre150d0_2_data.txt     Data      Titlis                               Precipitation; daily total 6 UTC - 6 UTC following day      20140225-20160106
+order_61482_TIT_rre150d0_2_legend.txt   Legend    Titlis                               Precipitation; daily total 6 UTC - 6 UTC following day      20140225-20160106
+order_61482_TIT_rre150d0_3_data.txt     Data      Titlis                               Precipitation; daily total 6 UTC - 6 UTC following day      20160412-20160708
+order_61482_TIT_rre150d0_3_legend.txt   Legend    Titlis                               Precipitation; daily total 6 UTC - 6 UTC following day      20160412-20160708
+order_61482_SLFTIT_rre150d0_1_data.txt  Data      Titlis                               Precipitation; daily total 6 UTC - 6 UTC following day      20110915-20161106
+order_61482_SLFTIT_rre150d0_1_legend.txt Legend    Titlis                               Precipitation; daily total 6 UTC - 6 UTC following day      20110915-20161106
+order_61482_SLFTIT_rre150d0_2_data.txt  Data      Titlis                               Precipitation; daily total 6 UTC - 6 UTC following day      20170207-20180825
+order_61482_SLFTIT_rre150d0_2_legend.txt Legend    Titlis                               Precipitation; daily total 6 UTC - 6 UTC following day      20170207-20180825
+order_61482_SLFUR2_rre150d0_1_data.txt  Data      Urseren / Giltnasen                  Precipitation; daily total 6 UTC - 6 UTC following day      19980930-20161112
+order_61482_SLFUR2_rre150d0_1_legend.txt Legend    Urseren / Giltnasen                  Precipitation; daily total 6 UTC - 6 UTC following day      19980930-20161112
+order_61482_SLFUR2_rre150d0_2_data.txt  Data      Urseren / Giltnasen                  Precipitation; daily total 6 UTC - 6 UTC following day      20170206-20170409
+order_61482_SLFUR2_rre150d0_2_legend.txt Legend    Urseren / Giltnasen                  Precipitation; daily total 6 UTC - 6 UTC following day      20170206-20170409
+order_61482_SLFUR2_rre150d0_3_data.txt  Data      Urseren / Giltnasen                  Precipitation; daily total 6 UTC - 6 UTC following day      20170808-20180825
+order_61482_SLFUR2_rre150d0_3_legend.txt Legend    Urseren / Giltnasen                  Precipitation; daily total 6 UTC - 6 UTC following day      20170808-20180825

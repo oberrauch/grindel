@@ -1,0 +1,30 @@
+#! /Users/oberrauch/miniconda3/envs/oggm_env/bin/python
+# use the oggm environment python
+
+''' Searches information (coordinates, name) about glaciers specified by RGI ID.'''
+
+# import
+from sys import argv, exit
+from ast import literal_eval
+from oggm.utils import get_rgi_glacier_entities
+
+# parse given shell parameters
+rids = literal_eval(str(argv))[1:]
+
+# stop if no RGI IDs are given
+if not rids:
+    print('No RGI ID given.')
+    sys.exit(0)
+
+# specify RGI version
+rgi_version = '60'
+# format RGI IDs into correct form
+rids = ['RGI{}-{}'.format(rgi_version, rid) for rid in rids]
+
+# get said RGI entries
+rgi_dir = get_rgi_glacier_entities(rids, version=rgi_version)
+# set RGIId as index
+rgi_dir.index = rgi_dir.RGIId
+
+# visualize
+print(rgi_dir[['CenLon', 'CenLat', 'Name']])

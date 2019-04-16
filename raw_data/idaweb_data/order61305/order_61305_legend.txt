@@ -1,0 +1,49 @@
+Bundesamt für Meteorologie und Klimatologie, MeteoSchweiz
+Operation Center 1
+Postfach 257
+8058 Zürich-Flughafen
+
+stn yyyyMMddHHmm
+
+stn Stationskürzel
+y   Jahr
+M   Monat
+d   Tag
+H   Stunde
+m   Minute
+
+Zeitangaben in UTC: 00:40 UTC = 02:40 Sommerzeit
+                              = 01:40 Winterzeit
+
+Zeitbezug bei Stundenwerten, sofern in der Parameterbeschreibung nicht anders vermerkt: HH  = (HH-1):41 - HH:40
+Beispiel: 13 = beinhaltet Messperiode von 12:41 bis 13:40 
+
+Fehlende Messwerte sind gekenntzeichnet mit '-'
+
+Qualitätsinformationen: Die Legende zu den Qualitätsinformationen ist zu finden unter: https://gate.meteoswiss.ch/idaweb/text/datenqualitaet_legende_de.pdf
+
+ 
+
+
+
+
+Stationen
+---------
+stn       Name                                 Parameter        Datenquelle                                        Länge/Breite             Koordinaten [km] Höhe ü. M. [m]
+SLFBEL    Belalp                               rre150d0         Eidg. Institut für Schnee- und Lawinenforschung    7°58'/46°24'             641186/138302    2556
+SLFEGH    Eggishorn                            rre150d0         Eidg. Institut für Schnee- und Lawinenforschung    8°05'/46°25'             650200/140800    2495
+SLFES2    Frutigen / Elsige                    rre150d0         Eidg. Institut für Schnee- und Lawinenforschung    7°38'/46°32'             615570/153150    2140
+SLFOTT    Frutigen / Ottere                    rre150d0         Eidg. Institut für Schnee- und Lawinenforschung    7°34'/46°32'             609450/154250    2020
+SLFGO3    Goms / Treichbode                    rre150d0         Eidg. Institut für Schnee- und Lawinenforschung    8°14'/46°29'             660650/148950    2430
+SLFFIR    Grindelwald / First                  rre150d0         Eidg. Institut für Schnee- und Lawinenforschung    8°04'/46°40'             647900/168780    2110
+SLFFIS    Kandersteg / Fisi                    rre150d0         Eidg. Institut für Schnee- und Lawinenforschung    7°40'/46°28'             618140/146735    2160
+SLFGA2    Laucherenalp / Gandegg               rre150d0         Eidg. Institut für Schnee- und Lawinenforschung    7°46'/46°26'             624751/142044    2717
+SLFTR2    Leukerbad / Trubelboden              rre150d0         Eidg. Institut für Schnee- und Lawinenforschung    7°35'/46°22'             611375/135525    2480
+SLFMAE    Männlichen                           rre150d0         Eidg. Institut für Schnee- und Lawinenforschung    7°57'/46°37'             638650/163175    2165
+SLFSH2    Schilthorn / Türliboden              rre150d0         Eidg. Institut für Schnee- und Lawinenforschung    7°50'/46°35'             630380/158450    2360
+
+Parameter
+---------
+          Einheit                              Beschreibung
+rre150d0  mm                                   Niederschlag; Tagessumme 6 UTC - 6 UTC Folgetag
+

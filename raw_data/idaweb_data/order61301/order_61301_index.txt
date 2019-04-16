@@ -1,0 +1,14 @@
+Federal Office of Meteorology and Climatology, MeteoSwiss
+Operation Center 1
+Postfach 257
+8058 Zürich-Flughafen
+
+Order number 61301
+
+Filename                                Filetype  Station                              Parameter                                                   Period
+order_61301_SLFFIR_htoauths_1_data.txt  Data      Grindelwald / First                  Total snow depth (sensor based); current value              1998101606-2018081604
+order_61301_SLFFIR_htoauths_1_legend.txt Legend    Grindelwald / First                  Total snow depth (sensor based); current value              1998101606-2018081604
+order_61301_SLFFIR_rre024i0_1_data.txt  Data      Grindelwald / First                  Total precipitation during 24 hours                         2000092014-2018081605
+order_61301_SLFFIR_rre024i0_1_legend.txt Legend    Grindelwald / First                  Total precipitation during 24 hours                         2000092014-2018081605
+order_61301_SLFFIR_rre150d0_1_data.txt  Data      Grindelwald / First                  Precipitation; daily total 6 UTC - 6 UTC following day      20000919-20161106
+order_61301_SLFFIR_rre150d0_1_legend.txt Legend    Grindelwald / First                  Precipitation; daily total 6 UTC - 6 UTC following day      20000919-20161106

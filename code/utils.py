@@ -61,7 +61,7 @@ def convert_to_wgs84(lon, lat, EPSG):
     # return transformed coordinates
     return point.GetX(), point.GetY()
 
-def get_leclercq_length(rgi_id):
+def get_leclercq_length(rgi_id, column='ref_dl'):
     """ This functions does in essence the same as the function OGGM routine
     `GlacierDirectory.et_ref_length_data()`, i.e. reading the length records
     from the Leclercq data set. This routine does only works if you'r using the
@@ -87,7 +87,7 @@ def get_leclercq_length(rgi_id):
     with xr.open_dataset(f, group=str(grp_id)) as ds:
         # read length records
         length_df = ds.dL.to_dataframe()
-        length_df.columns = ['ref']
+        length_df.columns = [column]
         length_df.name = ds.glacier_name
 
     return length_df

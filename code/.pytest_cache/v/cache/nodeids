@@ -1,5 +1,0 @@
-[
-  "test_metutils.py::test_f2c",
-  "test_metutils.py::test_c2f",
-  "test_metutils.py::test_f2c_rountrip"
-]

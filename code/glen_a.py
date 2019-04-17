@@ -15,8 +15,8 @@ from oggm.utils import get_demo_file, get_rgi_glacier_entities, rmsd_anomaly
 from oggm.tests.funcs import get_test_dir
 from oggm.core import gis, climate, centerlines, massbalance, flowline, inversion
 
-from oggm.grindel.utils import get_leclercq_length
-from oggm.grindel.mb_calibration_grindel import mb_calib
+from utils import get_leclercq_length
+from mb_calibration_grindel import mb_calib
 
 
 def glen_a(factors, prcp_fac=None, ref_df=None, path=None):

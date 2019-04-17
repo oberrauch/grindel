@@ -1,7 +1,7 @@
 import unittest
 import pandas as pd
 
-import grindel.utils as utils
+import code.utils as utils
 
 
 class TestGrindelUtils(unittest.TestCase):

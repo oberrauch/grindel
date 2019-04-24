@@ -11,11 +11,11 @@ import matplotlib.pyplot as plt
 # import OGGM modules
 import oggm
 from oggm import cfg, graphics, utils
-from oggm.utils import get_demo_file, get_rgi_glacier_entities, rmsd_anomaly
+from oggm.utils import get_demo_file, get_rgi_glacier_entities
 from oggm.tests.funcs import get_test_dir
 from oggm.core import gis, climate, centerlines, massbalance, flowline, inversion
 
-from utils import get_leclercq_length
+from utils import get_leclercq_length, rmsd_anomaly
 from mb_calibration_grindel import mb_calib
 
 
@@ -91,7 +91,8 @@ def glen_a(factors, prcp_fac=None, ref_df=None, path=None):
     glen_a = cfg.PARAMS['glen_a']
 
     # create DataFrame
-    df = pd.DataFrame(index=factors, columns=['correlation', 'rmsd', 'amp_diff', 'xcorr', 'xcorr_shift'])
+    # df = pd.DataFrame(index=factors, columns=['correlation', 'rmsd', 'amp_diff', 'xcorr', 'xcorr_shift'])
+    df = pd.DataFrame(index=factors, columns=['correlation', 'rmsd', 'amp_diff'])
 
     for f in factors:
         # Change the creep parameter
@@ -137,26 +138,27 @@ def glen_a(factors, prcp_fac=None, ref_df=None, path=None):
         # compute correlation coefficient
         corr = control.corr().iloc[0, 1]
         # compute rmsd anomaly
-        rmsd = rmsd_anomaly(control.ref, control.model)
+        rmsd = rmsd_anomaly(control.ref_dl, control.model)
 
         # compute amplitude
         amp = control.max() - control.min()
         amp_diff = amp.diff().iloc[-1]
 
         # compute cross correlation
-        shift = np.arange(-15, 15, 1)
-        xcorr = list()
-        for s in shift:
-            ref = control.ref.shift(s)
-            mod = control.model
-            df_ = pd.concat([ref, mod], axis=1).dropna()
-            xcorr.append(df_.corr().iloc[0, 1])
+        # shift = np.arange(-15, 15, 1)
+        # xcorr = list()
+        # for s in shift:
+        #     ref_dl = control.ref_dl.shift(s)
+        #     mod = control.model
+        #     df_ = pd.concat([ref_dl, mod], axis=1).dropna()
+        #     xcorr.append(df_.corr().iloc[0, 1])
+        #
+        # xcorr = pd.Series(xcorr, index=shift)
+        # xcorr_shift = xcorr.idxmax()
+        # xcorr = xcorr.max()
 
-        xcorr = pd.Series(xcorr, index=shift)
-        xcorr_shift = xcorr.idxmax()
-        xcorr = xcorr.max()
-
-        df.loc[f] = [corr, rmsd, amp_diff, xcorr, xcorr_shift]
+        # df.loc[f] = [corr, rmsd, amp_diff, xcorr, xcorr_shift]
+        df.loc[f] = [corr, rmsd, amp_diff]
 
     if path:
         df.to_csv(path)
@@ -168,7 +170,11 @@ def glen_a(factors, prcp_fac=None, ref_df=None, path=None):
     return df
 
 
-if __name__ == '__main__':
+def cross_correlation_with_mb_calibration():
+    """
+
+    :return:
+    """
     # iterate over different precipitation factors
     prcp_factors = np.linspace(1, 1.75, 16)
     for prcp_fac in prcp_factors:
@@ -189,3 +195,26 @@ if __name__ == '__main__':
         # compute length correlation for different A parameters
         fp = 'length_corr/length_corr_prcp_fac_{:.2f}.csv'.format(prcp_fac)
         glen_a(factors, prcp_fac=prcp_fac, ref_df=ref_df, path=fp)
+
+
+def cross_correlation_without_mb_calibration():
+    """
+
+    :return:
+    """
+    # iterate over different precipitation factors
+    prcp_factors = np.linspace(1, 1.75, 16)
+    for prcp_fac in prcp_factors:
+        # define factors scaling the creep parameters
+        factors = np.concatenate((np.linspace(0.1, 1, 9, endpoint=False),
+                                  np.linspace(1, 20, 20)))
+        # read reference t* list
+        fn = get_demo_file('oggm_ref_tstars_rgi6_histalp.csv')
+        ref_df = ref_df = pd.read_csv(fn, index_col=0)
+        # compute length correlation for different A parameters
+        fp = '../data/length_corr_no_mb_calib/length_corr_prcp_fac_{:.2f}.csv'.format(prcp_fac)
+        glen_a(factors, prcp_fac=prcp_fac, path=fp, ref_df=ref_df)
+
+
+if __name__ == '__main__':
+    cross_correlation_without_mb_calibration()

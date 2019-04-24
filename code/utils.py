@@ -10,7 +10,7 @@ import pandas as pd
 import xarray as xr
 
 # oggm modules
-from oggm.utils import get_rgi_glacier_entities, get_demo_file
+from oggm.utils import get_rgi_glacier_entities, get_demo_file, rmsd
 
 
 def rgi_finder(rids, rgi_version='60'):
@@ -61,6 +61,7 @@ def convert_to_wgs84(lon, lat, EPSG):
     # return transformed coordinates
     return point.GetX(), point.GetY()
 
+
 def get_leclercq_length(rgi_id, column='ref_dl'):
     """ This functions does in essence the same as the function OGGM routine
     `GlacierDirectory.et_ref_length_data()`, i.e. reading the length records
@@ -91,5 +92,12 @@ def get_leclercq_length(rgi_id, column='ref_dl'):
         length_df.name = ds.glacier_name
 
     return length_df
+
+
+def rmsd_anomaly(ref, data):
+    """Root Mean Squared Deviation of anomalies to mean,
+    i.e. rmsd(ref - mean(ref), data - mean(data)).
+    """
+    return rmsd(ref - np.mean(ref), data - np.mean(data))
 
 

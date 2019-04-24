@@ -29,3 +29,6 @@ class TestGrindelUtils(unittest.TestCase):
             self.assertRaises(RuntimeError)
         except RuntimeError as e:
             e.args[0] == 'No length data found for this glacier!'
+
+    def test_rmsd_anomaly(self):
+        raise NotImplementedError

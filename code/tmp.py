@@ -9,10 +9,6 @@ from oggm.utils import get_rgi_glacier_entities
 
 from oggm.core import gis, climate, centerlines, massbalance, flowline, inversion
 
-
-
-
-
 def tmp():
     ## Initialize
     # load default parameter file

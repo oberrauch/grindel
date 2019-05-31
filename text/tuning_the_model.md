@@ -10,7 +10,7 @@ The performance of the model is measured by the correlation between the modeled 
 
 There is no identifiable pattern, hence no clear choice for the best parameters.
 
-For higher values of Glen's *A* parameter the correlation between modeled and observed length changes increases. Highest correlation is found for a creep parameter 20-times as high as the default value ($2.4 \cdot 10^{-24}\ \mathrm{s^{-1}Pa^{-3}}​$ ), which seems non physical. It seems as if the *default* model glacier is too inert and the ice flows too slow...
+For higher values of Glen's *A* parameter the correlation between modeled and observed length changes increases. Highest correlation is found for a creep parameter 20-times as high as the default value ($2.4 \cdot 10^{-24}\ \mathrm{s^{-1}Pa^{-3}}$ ), which seems non physical. It seems as if the *default* model glacier is too inert and the ice flows too slow...
 
 ![Correlation matrix](../figures/glen_a/correlation.pdf)
 
@@ -18,9 +18,10 @@ On the other hand, the amplitude of length changes increases with increasing *A*
 
 ![Correlation matrix](../figures/glen_a/rmsd.pdf)
 
-The following exemplary figures illustrate the model behaviour for a precipitation scaling factor of 1 and 1.75, respectively. Thereby the creep parameters varies over two orders of magnitude (i.e., $2.4 \cdot [10^{-25},\ 10^{-24},\ 10^{-25}] \ \mathrm{s^{-1}Pa^{-3}}​$).
+The following exemplary figures illustrate the model behaviour for a precipitation scaling factor of 1 and 1.75, respectively. Thereby the creep parameters varies over two orders of magnitude (i.e., $2.4 \cdot [10^{-25},\ 10^{-24},\ 10^{-25}] \ \mathrm{s^{-1}Pa^{-3}}$).
 
 ![Length changes for precipitation factor 1](../figures/glen_a/prcp_scaling_factor_1_00.pdf)
 
 ![Length changes for precipitation factor 1.75](../figures/glen_a/prcp_scaling_factor_1_75.pdf)
 
+ 

@@ -50,7 +50,6 @@ gdir = oggm.GlacierDirectory(rgi_entity, reset=True)
 # GIS tasks
 gis.define_glacier_region(gdir, entity=rgi_entity)
 gis.glacier_masks(gdir)
-gdir
 
 # run center line preprocessing tasks
 centerlines.compute_centerlines(gdir)

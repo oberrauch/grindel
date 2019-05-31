@@ -10,16 +10,15 @@ import matplotlib.pyplot as plt
 
 # import OGGM modules
 import oggm
-from oggm import cfg, graphics, utils
+from oggm import cfg, utils
 from oggm.utils import get_demo_file, get_rgi_glacier_entities
-from oggm.tests.funcs import get_test_dir
 from oggm.core import gis, climate, centerlines, massbalance, flowline, inversion
 
-from utils import get_leclercq_length, rmsd_anomaly
 from mb_calibration_grindel import mb_calib
 
 
-def glen_a(factors, prcp_fac=None, ref_df=None, path=None):
+def glen_a(factors, prcp_fac=None, ref_df=None, path=None,
+           t_star=None, bias=0):
     """ Run model with different values for the creep parameter A and compute
     correlation and rmsd to length reference. Returns findings as DataFrame,
     and stores to file if path is given.
@@ -54,7 +53,6 @@ def glen_a(factors, prcp_fac=None, ref_df=None, path=None):
     rgi_id = 'RGI60-11.01270'
     rgi_df = get_rgi_glacier_entities([rgi_id], version='6')
     rgi_entity = rgi_df.iloc[0]
-    rgi_df.plot()
 
     # specify intersects
     cfg.set_intersects_db(utils.get_rgi_intersects_region_file('11'))
@@ -79,7 +77,10 @@ def glen_a(factors, prcp_fac=None, ref_df=None, path=None):
     ## Climate and mass balance parameters
     # process the HistAlp climate file
     climate.process_histalp_data(gdir)
-    climate.local_t_star(gdir, ref_df=ref_df)
+    if (t_star is not None) and (bias is not None):
+        climate.local_t_star(gdir, tstar=t_star, bias=bias)
+    else:
+        climate.local_t_star(gdir, ref_df=ref_df)
     climate.mu_star_calibration(gdir)
 
     ## Mass balance
@@ -91,8 +92,8 @@ def glen_a(factors, prcp_fac=None, ref_df=None, path=None):
     glen_a = cfg.PARAMS['glen_a']
 
     # create DataFrame
-    # df = pd.DataFrame(index=factors, columns=['correlation', 'rmsd', 'amp_diff', 'xcorr', 'xcorr_shift'])
-    df = pd.DataFrame(index=factors, columns=['correlation', 'rmsd', 'amp_diff'])
+    df = pd.DataFrame(index=factors,
+                      columns=['corr', 'rmsd', 'rmsd_bc', 'amp_diff'])
 
     for f in factors:
         # Change the creep parameter
@@ -128,7 +129,8 @@ def glen_a(factors, prcp_fac=None, ref_df=None, path=None):
         length_mod.columns = ['model']
 
         # get reference length (Leclercq)
-        length_ref = get_leclercq_length('11.01270')
+        fn = '/Users/oberrauch/work/grindelwald/data/length_ref_abs.csv'
+        length_ref = pd.read_csv(fn, index_col=0)
 
         # combine both records
         length_df = pd.concat([length_ref, length_mod], axis=1)
@@ -138,29 +140,18 @@ def glen_a(factors, prcp_fac=None, ref_df=None, path=None):
         # compute correlation coefficient
         corr = control.corr().iloc[0, 1]
         # compute rmsd anomaly
-        rmsd = rmsd_anomaly(control.ref_dl, control.model)
+        rmsd = utils.rmsd(control.length_ref, control.model)
+        rmsd_bc = utils.rmsd_bc(control.length_ref, control.model)
 
         # compute amplitude
         amp = control.max() - control.min()
         amp_diff = amp.diff().iloc[-1]
 
-        # compute cross correlation
-        # shift = np.arange(-15, 15, 1)
-        # xcorr = list()
-        # for s in shift:
-        #     ref_dl = control.ref_dl.shift(s)
-        #     mod = control.model
-        #     df_ = pd.concat([ref_dl, mod], axis=1).dropna()
-        #     xcorr.append(df_.corr().iloc[0, 1])
-        #
-        # xcorr = pd.Series(xcorr, index=shift)
-        # xcorr_shift = xcorr.idxmax()
-        # xcorr = xcorr.max()
-
-        # df.loc[f] = [corr, rmsd, amp_diff, xcorr, xcorr_shift]
-        df.loc[f] = [corr, rmsd, amp_diff]
+        # add to Dataframe
+        df.loc[f] = [corr, rmsd, rmsd_bc, amp_diff]
 
     if path:
+        # store to file
         df.to_csv(path)
 
     # reset the creep parameter to default values
@@ -210,11 +201,95 @@ def cross_correlation_without_mb_calibration():
                                   np.linspace(1, 20, 20)))
         # read reference t* list
         fn = get_demo_file('oggm_ref_tstars_rgi6_histalp.csv')
-        ref_df = ref_df = pd.read_csv(fn, index_col=0)
+        ref_df = pd.read_csv(fn, index_col=0)
         # compute length correlation for different A parameters
         fp = '../data/length_corr_no_mb_calib/length_corr_prcp_fac_{:.2f}.csv'.format(prcp_fac)
         glen_a(factors, prcp_fac=prcp_fac, path=fp, ref_df=ref_df)
 
 
+def cross_correlation_tstar_prcpfac_glena_files():
+    # specify range of t* to test
+    step = 5
+    y0 = 1935
+    y1 = 1960
+    t_stars = np.arange(y0, y1+1, step)
+
+    # iterate over all t*
+    for t_star in t_stars:
+
+        # iterate over different precipitation factors
+        prcp_factors = np.linspace(1, 1.75, 4)
+        for prcp_fac in prcp_factors:
+            # define factors scaling the creep parameters
+            factors = np.array([0.1, 0.5, 1, 2, 10])
+            # read reference t* list
+            # compute length correlation for different A parameters
+            fp = ('../data/length_corr_t_star/length_corr_t_star_{:d}'
+                  '_prcp_fac_{:.2f}.csv'.format(t_star, prcp_fac))
+            glen_a(factors, prcp_fac=prcp_fac, path=fp, t_star=t_star)
+
+
+def cross_correlation_tstar_prcpfac_glena(t_stars,
+                                          prcp_factors,
+                                          glen_a_factors):
+    # create xarray Dataset with coordinates
+    ds = xr.Dataset()
+    # add coordinates
+    ds.coords['t_star'] = ('t_star', t_stars)
+    # TODO: add coordinate attributes
+    ds['t_star'].attrs['description'] = 'Local t*'
+    ds.coords['prcp_fac'] = ('prcp_fac', prcp_factors)
+    ds.coords['glen_a_fac'] = ('glen_a_fac', glen_a_factors)
+
+    # get shape of Dataset
+    shape = [dim for dim in ds.dims.values()]
+    # create dummy matrix, filled with NaN
+    dummy = np.zeros(shape) * np.NaN
+
+    # add variables and respective attributes
+    ds['corr'] = (['glen_a_fac', 'prcp_fac', 't_star'], dummy.copy())
+    ds['rmsd'] = (['glen_a_fac', 'prcp_fac', 't_star'], dummy.copy())
+    ds['rmsd_bc'] = (['glen_a_fac', 'prcp_fac', 't_star'], dummy.copy())
+    ds['amp_diff'] = (['glen_a_fac', 'prcp_fac', 't_star'], dummy.copy())
+
+    # iterate over all t*
+    for t_star in t_stars:
+        # iterate over different precipitation factors
+        for prcp_fac in prcp_factors:
+            # define factors scaling the creep parameters
+
+            # read reference t* list
+            # compute length correlation for different A parameters
+            df = glen_a(glen_a_factors, prcp_fac=prcp_fac, t_star=t_star)
+            for glen_a_fac, row in df.iterrows():
+                for column, value in row.iteritems():
+                    ds[column].loc[dict(t_star=t_star,
+                                        prcp_fac=prcp_fac,
+                                        glen_a_fac=glen_a_fac)] = value
+
+    return ds
+
+
 if __name__ == '__main__':
-    cross_correlation_without_mb_calibration()
+    import time
+
+    # specify range of t*
+    step = 5
+    y0 = 1935
+    y1 = 1960
+    t_stars = np.arange(y0, y1 + 1, step)
+    # specify range of precipation scaling factor
+    prcp_factors = np.linspace(1, 1.75, 4)
+    # specify range of glen A scaling factor
+    glen_a_factors = np.array([0.1, 0.5, 1, 2, 10])
+
+    start = time.time()
+
+    ds = cross_correlation_tstar_prcpfac_glena(t_stars,
+                                               prcp_factors,
+                                               glen_a_factors)
+
+    print('Elapsed time:', start - time.time(), '[s]')
+
+    path = '/Users/oberrauch/work/grindelwald/data/glen_a.nc'
+    ds.to_netcdf(path)

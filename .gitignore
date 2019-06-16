@@ -3,4 +3,7 @@
 working_directories/
 .ipynb_checkpoints
 
+# Large files
+*.nc
+
 **/__pycache__/

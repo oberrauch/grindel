@@ -289,7 +289,7 @@ if __name__ == '__main__':
                                                prcp_factors,
                                                glen_a_factors)
 
-    print('Elapsed time:', start - time.time(), '[s]')
+    print('Elapsed time:', time.time() - start, '[s]')
 
     path = '/Users/oberrauch/work/grindelwald/data/glen_a.nc'
     ds.to_netcdf(path)

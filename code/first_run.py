@@ -1,7 +1,4 @@
-# -------------------------------
-#
-#
-# -------------------------------
+""" Piecing together a first model run from start to finish. """
 
 # standard libraries
 import numpy as np
@@ -405,11 +402,13 @@ def read_and_plot():
 
 if __name__ == '__main__':
     # run the glacier with CRU climate data
-    cru()
+    # cru()
     # run(use_histalp=False)
+
     # run the glacier with HISTALP climate data
     histalp()
-    # run(use_histalp=True)
+    run(use_histalp=True)
+    
     # read the lenght data files and create plot
     read_and_plot()
     pass

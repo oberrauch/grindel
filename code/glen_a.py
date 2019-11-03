@@ -1,3 +1,12 @@
+"""
+Grindelwald project: calibration phase
+--------------------------------------
+
+The two most prelevant model parameters are the ice creep parameter
+(or Glen's A parameter) and the precipitation scaling parameter.
+
+"""
+
 ## Import
 # import externals libs
 import os
@@ -19,12 +28,29 @@ from mb_calibration_grindel import mb_calib
 
 def glen_a(factors, prcp_fac=None, ref_df=None, path=None,
            t_star=None, bias=0):
-    """ Run model with different values for the creep parameter A and compute
-    correlation and rmsd to length reference. Returns findings as DataFrame,
-    and stores to file if path is given.
+    """ Run model with different values for the creep parameter A.
+    Compute correlation coefficient and rmsd to length reference.
+    Returns findings as DataFrame, and stores them to file (if path is
+    given).
 
-    :param path:
-    :return:
+    Parameters:
+    -----------
+    factors : float array like
+        numerical factors with which the default A parameter is scaled
+    prcp_fac : float, optional, default: None
+        precipitation scaling factor
+    ref_df : pandas.DataFrame
+        table with t_star and mb residual for reference glaciers
+    path : string, optional
+        file path where to store results
+    t_star : float, optional, default: None
+        equilibrium year used for the mass balance calibration
+    bias : float, optional, default: 0
+        mass balance residual in [mm w.e. yr-1]
+
+    Returns:
+    --------
+    @TODO
     """
 
     ## Initialize
@@ -162,11 +188,16 @@ def glen_a(factors, prcp_fac=None, ref_df=None, path=None,
 
 
 def cross_correlation_with_mb_calibration():
+    """ Runs the above defined `glen_a()` rountine for different
+    precipitation scaling factors (in a loop). The mass balance
+    calibration is performed for each precipitation scaling factor.
+
+    Each precipitation scaling factor results in one file, which is
+    store in the ../data/length_corr/ directory.
+
     """
 
-    :return:
-    """
-    # iterate over different precipitation factors
+    # iterate over different precipitation scaling factors
     prcp_factors = np.linspace(1, 1.75, 16)
     for prcp_fac in prcp_factors:
         # check if mb calibration already produced correct t* file
@@ -184,14 +215,18 @@ def cross_correlation_with_mb_calibration():
         factors = np.concatenate((np.linspace(0.1, 1, 9, endpoint=False),
                                   np.linspace(1, 20, 20)))
         # compute length correlation for different A parameters
-        fp = 'length_corr/length_corr_prcp_fac_{:.2f}.csv'.format(prcp_fac)
+        fp = '../data/length_corr/length_corr_prcp_fac_{:.2f}.csv'.format(prcp_fac)
         glen_a(factors, prcp_fac=prcp_fac, ref_df=ref_df, path=fp)
 
 
 def cross_correlation_without_mb_calibration():
-    """
+    """ Runs the above defined `glen_a()` rountine for different
+    precipitation scaling factors (in a loop), using mu_star based on
+    the reference t_start list.
 
-    :return:
+    Each precipitation scaling factor results in one file, which is
+    store in the ../data/length_corr_no_mb_calib/ directory.
+
     """
     # iterate over different precipitation factors
     prcp_factors = np.linspace(1, 1.75, 16)
@@ -208,6 +243,14 @@ def cross_correlation_without_mb_calibration():
 
 
 def cross_correlation_tstar_prcpfac_glena_files():
+    """ Runs the above defined `glen_a()` rountine for different
+    precipitation scaling factors and different 'equilibrium years'
+    t_star (in a nested loop). No mass balance calibration is performed.
+
+    Each precipitation scaling factor results in one file, which is
+    store in the ../data/length_corr_t_star/ directory.
+
+    """
     # specify range of t* to test
     step = 5
     y0 = 1935
@@ -232,6 +275,13 @@ def cross_correlation_tstar_prcpfac_glena_files():
 def cross_correlation_tstar_prcpfac_glena(t_stars,
                                           prcp_factors,
                                           glen_a_factors):
+    """ Runs the above defined `glen_a()` rountine for different
+    precipitation scaling factors and different 'equilibrium years'
+    t_star (in a nested loop). No mass balance calibration is performed.
+
+    The results are returned as a pd.DataFrame, no data is store in files.
+
+    """
     # create xarray Dataset with coordinates
     ds = xr.Dataset()
     # add coordinates
@@ -289,6 +339,7 @@ if __name__ == '__main__':
                                                prcp_factors,
                                                glen_a_factors)
 
+    # display computation time
     print('Elapsed time:', time.time() - start, '[s]')
 
     path = '/Users/oberrauch/work/grindelwald/data/glen_a.nc'

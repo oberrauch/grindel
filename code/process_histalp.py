@@ -1,5 +1,11 @@
 #!/usr/bin/env python
 
+""" Combine the 'raw' HistAlp temperature and precipiation files into
+one data set and store it to file.
+
+Author: Matthias Dusch?!
+"""
+
 import numpy as np
 import pandas as pd
 import xarray as xr
@@ -99,7 +105,7 @@ def create_oggm_histalp_file(t_file, p_file, o_file,
 
 if __name__ == '__main__':
 
-    # histalpfiles
+    # histalp files
     tfile = '../raw_data/HISTALP_temperature_1780-2014.nc'
     pfile = '../raw_data/HISTALP_precipitation_all_abs_1801-2014.nc'
 

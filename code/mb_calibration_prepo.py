@@ -1,12 +1,6 @@
-# ------------------------------------
-# Preprocessing needed for the custom mass balance calibration process.
-# This is basically
-#
-# ------------------------------------
-# Following the OGGM documentation, using
-# the HISTALP climate data set.
-# https://oggm.readthedocs.io/en/latest/run_examples/run_mb_calibration.html
-# ------------------------------------
+""" Includes the needed preprocessing for the custom mass balance
+calibration process.
+"""
 
 # Python imports
 from os import path

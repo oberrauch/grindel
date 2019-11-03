@@ -1,6 +1,12 @@
+""" This file contains some rountines to work with station data
+provided by the IDAWEB service (https://gate.meteoswiss.ch/idaweb/more.do)
+"""
+
 import numpy as np
 import pandas as pd
 import os
+
+# specify column names, depending on the selected language
 
 index_columns = {
     'en': {

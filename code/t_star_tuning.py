@@ -1,3 +1,19 @@
+"""
+Grindelwald project: calibration phase
+--------------------------------------
+The equilibrium year `t_star` used for the calibration of the glaciers
+temperature sensitivity `mu_star` is a vital parameter. However, it is
+much more of a model parameter than an actual physical year. Hence, we
+use it as additonal tuning parameter.
+
+This script runs the OGGM flowline model for the Upper Grindelwald
+Glacier (RGI60-11.01270) for different values of t_star, between 1817
+and 1997 in 1 year increments. The resulting model length is stored to
+the file `../data/length_t_star.csv`. The reference length change
+measurements (from the Leclercq dataset) are added to the file.
+
+"""
+
 # import externals libs
 import os
 import shutil
@@ -69,7 +85,7 @@ y0 = ci['baseline_hydro_yr_0']
 y1 = ci['baseline_hydro_yr_1']
 
 # specify range of t* to test
-step = 5
+step = 1
 mu_hp = int(cfg.PARAMS['mu_star_halfperiod'])
 t_stars = np.arange(y0+mu_hp, y1-mu_hp, step)
 
@@ -102,9 +118,13 @@ for t_star in t_stars:
     length.loc[t_star] = diag_ds.length_m.to_dataframe()['length_m']
 
 # add reference length changes
-length_ref = get_leclercq_length(rgi_id='11.01270')
+length_ref = get_leclercq_length(rgi_id=rgi_id.split('-')[-1])
 length = length.append(length_ref.T)
+# make sure the column indices (years) are numbers
+length.columns = length.columns.astype(int)
+# add name to index for clarity
 length.index.name = 't_stars'
 
 # store DataFrame to file
-length.to_csv('/Users/oberrauch/work/grindelwald/data/length_t_star.csv')
+path = '/Users/oberrauch/work/grindelwald/data/length_t_star.csv'
+length.to_csv(path)

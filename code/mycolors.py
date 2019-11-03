@@ -1,11 +1,13 @@
-# ------------------------
-# List of selected colors 
-# ------------------------
-# This helps to have a consistent color scheme
-# throughout a project. If colors are added, the
-# 'colors' name list must be updated as well.
-# 
-# With 'view()' all colors and their names are displayed.
+"""
+List of selected colors 
+------------------------
+This helps to have a consistent color scheme
+throughout a project. If colors are added, the
+'colors' name list must be updated as well.
+
+With 'view()' all colors and their names are displayed.
+
+"""
 
 # import section
 import matplotlib.pyplot as plt

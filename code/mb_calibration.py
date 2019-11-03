@@ -1,10 +1,8 @@
-# ------------------------------------
-# Run the mass balance calibration
-# ------------------------------------
-# Following the OGGM documentation, using
-# the HISTALP climate data set.
-# https://oggm.readthedocs.io/en/latest/run_examples/run_mb_calibration.html
-# ------------------------------------
+""" Run the mass balance calibration, following the OGGM documentation
+and using the HISTALP climate data set.
+
+https://oggm.readthedocs.io/en/latest/run_examples/run_mb_calibration.html
+"""
 
 # Python imports
 from os import path

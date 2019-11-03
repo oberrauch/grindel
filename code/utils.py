@@ -1,7 +1,6 @@
-# ----------------
-#  Import section
-# ----------------
+""" Some utility routines that didn't fit anywhere else. """
 
+## Import section
 # gis modules
 import ogr
 import osr

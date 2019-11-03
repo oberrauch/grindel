@@ -1,4 +1,6 @@
-# Run the mass balance calibration
+""" Run the mass balance calibration for the Upper Grindelwald Glacier
+with different precipitation scaling factors.
+"""
 
 # Python imports
 import json
